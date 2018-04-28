@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const HappyPack = require('happypack');
 // const happyThreadPool = HappyPack.ThreadPool({size: os.cpus().length});
 // const AutoDllPlugin = require('autodll-webpack-plugin');
-// const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugin
 
 module.exports = {
 	entry: {
@@ -16,7 +15,7 @@ module.exports = {
 		filename: '[name].js',
 		chunkFilename: '[name].js',
 		publicPath:
-			'//jiaopeitoutiao-test.oss-cn-hangzhou.aliyuncs.com/jiameng/pinpai/2018041218/',
+			'https://jiameng-cdn.schoolpal.cn/jiameng/pinpai/2018041218/',
 	},
 	resolve: {
 		extensions: ['.js', '.jsx'],
@@ -31,7 +30,6 @@ module.exports = {
 		react: 'React',
 		'react-dom': 'ReactDOM',
 		'react-router-dom': 'ReactRouterDOM',
-		moment: 'moment',
 	},
 	module: {
 		rules: [
@@ -84,27 +82,32 @@ module.exports = {
 	// 会生成.map文件
 	// devtool: 'source-map',
 	plugins: [
-		// new ReactLoadablePlugin({
-		//     filename: './dist/react-loadable.json',
-		// }),
 		// new webpack.optimize.CommonsChunkPlugin({
 		//     name:'vendor',                                  //将公共模块打包
 		//     // filename:'vendor.js'
 		// }),
-		// new HappyPack({id: 'jsx', threadPool: happyThreadPool, loaders: ['babel-loader']}),
 		new webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: '"development"',
+				NODE_ENV: '"production"',
 			},
 			__LOCAL__: false,
-			__TEST__: true,
-			__PRO__: false,
+			__TEST__: false,
+			__PRO__: true,
 		}),
 		// new HtmlWebpackPlugin({                         //生成模板文件
 		//     template: './index.html',
 		//     filename: 'index.html',
 		//     chunks: ['app','vendor'],
 		//     // manifest:'static/common-1.0.0.js',
+		// }),
+		// new webpack.optimize.UglifyJsPlugin({
+		//     sourceMap: true,
+		//     compress: {
+		//         warnings: false,
+		//         drop_console: true
+		//     },
+		//     beautify:false,
+		//     comments:false
 		// }),
 		// new webpack.DllReferencePlugin({
 		//     // context: __dirname,
@@ -121,7 +124,7 @@ module.exports = {
 		//         // 如果不使用本插件，react将会打development环境的包
 		//         new webpack.DefinePlugin({
 		//             'process.env': {
-		//                 NODE_ENV: '"development"'
+		//                 NODE_ENV: '"production"'
 		//             },
 		//         }),
 		//     ],
