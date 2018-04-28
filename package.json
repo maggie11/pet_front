@@ -16,9 +16,7 @@
     "url": "https://github.com/maggie11/pet_front/issues"
   },
   "homepage": "https://github.com/maggie11/pet_front#readme",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "autodll-webpack-plugin": "^0.3.8",
     "autoprefixer": "^8.1.0",
