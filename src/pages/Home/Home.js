@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Icon, Layout } from 'antd'
-import './Home.css'
-
+import { Icon, Layout, Menu, Button } from 'antd'
 import TopTitle from '../../components/TopTitle/TopTitle'
 
 class Home extends Component {
@@ -11,10 +9,7 @@ class Home extends Component {
 
     render() {
         return (
-            <Layout>
-                <Icon type="question" style={{ fontSize: 16, color: '#08c' }} />
-                111
-            </Layout>
+            <TopTitle/>
         )
     }
 }
