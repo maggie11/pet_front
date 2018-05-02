@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Icon, Layout, Menu, Button } from 'antd'
 import TopTitle from '../../components/TopTitle/TopTitle'
+import ShowList from '../../components/ShowList/ShowList'
 
 class Home extends Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class Home extends Component {
 
     render() {
         return (
-            <TopTitle title="首页"/>
+            <div>
+                <TopTitle title="首页"/>
+                <ShowList requrl=""/>
+            </div>
         )
     }
 }
