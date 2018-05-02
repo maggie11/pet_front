@@ -23,15 +23,10 @@ const UserInfo = Loadable({
 
 ReactDOM.render(
     <HashRouter>
-        <Layout
-            style={{
-                padding: '24px',
-                minHeight: '900px',
-                overflow: 'auto',
-            }}
-        >
-            <Route path="/" render={() => <Redirect to={`/home`}/>} />
+        <Layout>
+            <Route path="/" exact render={() => <Redirect to={`/home`}/>} />
             <Route path="/home" component={Home} />
+            <Route path="/message" component={Message} />
         </Layout>
     </HashRouter>, document.getElementById('root')
 );

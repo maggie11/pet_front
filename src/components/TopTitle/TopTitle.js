@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Icon } from 'antd'
+import { Icon, Row, Col } from 'antd'
 import './TopTitle.css'
 
 class TopTitle extends Component {
@@ -11,16 +11,21 @@ class TopTitle extends Component {
         
     }
 
-    _setBack = () => {
-        return <Icon type="caret-left" style={{ fontSize: 1, color: 'red' }}/>
+    _goBack = () => {
+       window.history.go(-1);
     }
 
     render() {
+        const backBtn = (
+            <Icon type="caret-left" style={{ fontSize: 1, color: '#000' }} onClick={() => this._goBack()}/>
+        )
+
         return (
-            <div>
-                <a>{this._setBack()}</a>
-                {this.props.title}
-            </div>
+            <Row className="container">
+                <Col span={8}>{backBtn}</Col>
+                <Col span={8}>{this.props.title}</Col>
+                <Col span={8}></Col>
+            </Row>
         )
     }
 }

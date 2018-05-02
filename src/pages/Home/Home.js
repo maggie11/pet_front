@@ -9,7 +9,7 @@ class Home extends Component {
 
     render() {
         return (
-            <TopTitle/>
+            <TopTitle title="首页"/>
         )
     }
 }
